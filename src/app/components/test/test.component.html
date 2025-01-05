@@ -1,5 +1,5 @@
 <div>
-  <p>This is test component</p>
+  <!-- <p>This is test component</p> -->
   <!-- <p>{{ title }}</p>
   <p>{{ getFullName() }}</p>
 
@@ -11,6 +11,56 @@
   <button (click)="toggleState()">Click me</button>
   <input type="text" [(ngModel)]="inputText" />
   <p>{{ inputText }}</p> -->
-  <p>{{ childMessage }}</p>
-  <button (click)="sendMessageToParent()">Send message to parent</button>
+  <!-- <p>{{ childMessage }}</p> -->
+  <!-- <button (click)="sendMessageToParent()">Send message to parent</button> -->
+  <!-- <p appHighlight [highlightColor]="'blue'">
+    Move the cursor to see the effect
+  </p> -->
+
+  <!--Old Directive-->
+
+  <!-- <p *ngIf="isClickedState; else notClickedState">Button on clicked</p>
+
+  <ng-template #notClickedState>
+    <p>Button not clicked</p>
+  </ng-template>
+  <button (click)="toggleState()">Change state</button> -->
+
+  <!-- <ul>
+    <li *ngFor="let user of users; index as i">{{ i + 1 }}: {{ user }}</li>
+  </ul> -->
+
+  <!-- <div [ngSwitch]="appState">
+    <p *ngSwitchCase="'active'">Application is active</p>
+    <p *ngSwitchCase="'paused'">Application is paused</p>
+    <p *ngSwitchCase="'stopped'">Application is stopped</p>
+    <p *ngSwitchDefault>Application is in unknown state</p>
+  </div> -->
+
+  <!--New Directive-->
+
+  <!-- @if(isClickedState) {
+  <p>Button on clicked</p>
+  } @else {
+  <p>Button not clicked</p>
+  }
+  <button (click)="toggleState()">Change state</button> -->
+
+  <!-- <ul>
+    @for (item of items; track item.id; let idx = $index, e = $even) {
+    <li>Fruit №{{ idx + 1 }}: {{ item.name }}</li>
+    } @empty {
+    <li>There are no fruits</li>
+    }
+  </ul> -->
+
+  @switch (appState){ @case ('active') {
+  <p>Application is active</p>
+  } @case ('paused') {
+  <p>Application is paused</p>
+  } @case ('stopped') {
+  <p>Application is stopped</p>
+  } @default {
+  <p>Application is in unknown state</p>
+  } }
 </div>
