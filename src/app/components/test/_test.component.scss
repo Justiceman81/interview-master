@@ -1,3 +1,60 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c9bb70;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 p {
-  color: red;
+  color: black;
+}
+
+button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #0056b3;
+}
+button:disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+.active {
+  background-color: #007bff;
+}
+
+.disabled {
+  background-color: #f0f0f0;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.event-example {
+  width: 200px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+}
+.clicked {
+  background-color: #007bff;
+  color: #ffffff;
 }
