@@ -54,7 +54,7 @@
     }
   </ul> -->
 
-  @switch (appState){ @case ('active') {
+  <!-- @switch (appState){ @case ('active') {
   <p>Application is active</p>
   } @case ('paused') {
   <p>Application is paused</p>
@@ -62,5 +62,15 @@
   <p>Application is stopped</p>
   } @default {
   <p>Application is in unknown state</p>
-  } }
+  } } -->
+
+  <p>{{ today | date : "fullDate" }}</p>
+  <p>{{ "hello world" | uppercase }}</p>
+  <p>{{ "HELLO WORLD" | lowercase }}</p>
+  <p>{{ 1500.5 | currency }}</p>
+  <p>{{ 1.23456789 | number }}</p>
+  <p>{{ 0.5 | percent }}</p>
+  <p>{{ "Hello World" | slice : 1 : 5 }}</p>
+  <p>{{ { name: "John", age: 30 } | json }}</p>
+  <p>{{ "Довгий текст, який потрібно обрізати" | truncate : 18 }}</p>
 </div>

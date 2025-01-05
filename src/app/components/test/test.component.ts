@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from '../../directive/highlight.directive';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
 
 @Component({
   selector: 'app-test',
-  imports: [CommonModule, FormsModule, HighlightDirective],
+  standalone: true,
+  imports: [CommonModule, FormsModule, HighlightDirective, TruncatePipe],
   templateUrl: './test.component.html',
   styleUrl: './_test.component.scss',
 })
@@ -31,6 +33,9 @@ export class TestComponent {
   ];
 
   appState = 'paused';
+
+  today = new Date();
+  longText = 'Very long text that needs to be trimmed';
 
   @Input() childMessage: string = 'Test';
 
