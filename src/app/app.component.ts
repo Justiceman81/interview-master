@@ -4,6 +4,7 @@ import { TestComponent } from './components/test/test.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, TestComponent],
   templateUrl: './app.component.html',
   styleUrl: './_app.component.scss',
