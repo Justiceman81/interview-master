@@ -333,9 +333,9 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <router-outlet />
-<p>This is component</p>
-<p>{{ messageFromChild }}</p>
-<app-test
-  [childMessage]="messageFromParent"
-  (messageFromChild)="getMessageFromChild($event)"
-></app-test>
+<p>This is app component</p>
+<!-- <p>{{ messageFromChild }}</p> -->
+<app-test></app-test>
+
+<!-- [childMessage]="messageFromParent"
+  (messageFromChild)="getMessageFromChild($event)" -->

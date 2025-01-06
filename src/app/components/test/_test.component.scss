@@ -9,52 +9,91 @@ div {
   margin: 0;
   padding: 0;
 }
-p {
-  color: black;
-}
+// p {
+//   color: black;
+// }
 
-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #ffffff;
-  font-size: 16px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s;
-}
-button:hover {
-  background-color: #0056b3;
-}
-button:disabled {
-  background-color: #ccc;
-  color: #999;
-  cursor: not-allowed;
-}
-.active {
-  background-color: #007bff;
-}
+// button {
+//   display: inline-block;
+//   padding: 0.5rem 1rem;
+//   border: none;
+//   border-radius: 4px;
+//   background-color: #007bff;
+//   color: #ffffff;
+//   font-size: 16px;
+//   text-align: center;
+//   text-decoration: none;
+//   cursor: pointer;
+//   outline: none;
+//   transition: background-color 0.3s;
+// }
+// button:hover {
+//   background-color: #0056b3;
+// }
+// button:disabled {
+//   background-color: #ccc;
+//   color: #999;
+//   cursor: not-allowed;
+// }
+// .active {
+//   background-color: #007bff;
+// }
 
-.disabled {
-  background-color: #f0f0f0;
-  color: #999999;
-  cursor: not-allowed;
-}
+// .disabled {
+//   background-color: #f0f0f0;
+//   color: #999999;
+//   cursor: not-allowed;
+// }
 
-.event-example {
-  width: 200px;
-  height: 100px;
-  background-color: #f0f0f0;
+// .event-example {
+//   width: 200px;
+//   height: 100px;
+//   background-color: #f0f0f0;
+//   border: 1px solid #ccc;
+//   text-align: center;
+//   line-height: 100px;
+//   cursor: pointer;
+// }
+// .clicked {
+//   background-color: #007bff;
+//   color: #ffffff;
+// }
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.todo-input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  text-align: center;
-  line-height: 100px;
+  border-radius: 4px;
+}
+.add-btn,
+.remove-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
-.clicked {
-  background-color: #007bff;
-  color: #ffffff;
+.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+.remove-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+.remove-btn:hover {
+  background-color: blue;
+}
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+.todo-item {
+  margin: 10px 0;
 }
