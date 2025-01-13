@@ -1,6 +1,6 @@
-<div>
-  <!-- <p>This is test component</p> -->
-  <!-- <p>{{ title }}</p>
+<!-- <div> -->
+<!-- <p>This is test component</p> -->
+<!-- <p>{{ title }}</p>
   <p>{{ getFullName() }}</p>
 
   <p [ngStyle]="{ color: 'red' }">тут використано ngStyle</p>
@@ -11,42 +11,42 @@
   <button (click)="toggleState()">Click me</button>
   <input type="text" [(ngModel)]="inputText" />
   <p>{{ inputText }}</p> -->
-  <!-- <p>{{ childMessage }}</p> -->
-  <!-- <button (click)="sendMessageToParent()">Send message to parent</button> -->
-  <!-- <p appHighlight [highlightColor]="'blue'">
+<!-- <p>{{ childMessage }}</p> -->
+<!-- <button (click)="sendMessageToParent()">Send message to parent</button> -->
+<!-- <p appHighlight [highlightColor]="'blue'">
     Move the cursor to see the effect
   </p> -->
 
-  <!--Old Directive-->
+<!--Old Directive-->
 
-  <!-- <p *ngIf="isClickedState; else notClickedState">Button on clicked</p>
+<!-- <p *ngIf="isClickedState; else notClickedState">Button on clicked</p>
 
   <ng-template #notClickedState>
     <p>Button not clicked</p>
   </ng-template>
   <button (click)="toggleState()">Change state</button> -->
 
-  <!-- <ul>
+<!-- <ul>
     <li *ngFor="let user of users; index as i">{{ i + 1 }}: {{ user }}</li>
   </ul> -->
 
-  <!-- <div [ngSwitch]="appState">
+<!-- <div [ngSwitch]="appState">
     <p *ngSwitchCase="'active'">Application is active</p>
     <p *ngSwitchCase="'paused'">Application is paused</p>
     <p *ngSwitchCase="'stopped'">Application is stopped</p>
     <p *ngSwitchDefault>Application is in unknown state</p>
   </div> -->
 
-  <!--New Directive-->
+<!--New Directive-->
 
-  <!-- @if(isClickedState) {
+<!-- @if(isClickedState) {
   <p>Button on clicked</p>
   } @else {
   <p>Button not clicked</p>
   }
   <button (click)="toggleState()">Change state</button> -->
 
-  <!-- <ul>
+<!-- <ul>
     @for (item of items; track item.id; let idx = $index, e = $even) {
     <li>Fruit №{{ idx + 1 }}: {{ item.name }}</li>
     } @empty {
@@ -54,7 +54,7 @@
     }
   </ul> -->
 
-  <!-- @switch (appState){ @case ('active') {
+<!-- @switch (appState){ @case ('active') {
   <p>Application is active</p>
   } @case ('paused') {
   <p>Application is paused</p>
@@ -64,7 +64,7 @@
   <p>Application is in unknown state</p>
   } } -->
 
-  <!-- <p>{{ today | date : "fullDate" }}</p>
+<!-- <p>{{ today | date : "fullDate" }}</p>
   <p>{{ "hello world" | uppercase }}</p>
   <p>{{ "HELLO WORLD" | lowercase }}</p>
   <p>{{ 1500.5 | currency }}</p>
@@ -74,7 +74,7 @@
   <p>{{ { name: "John", age: 30 } | json }}</p>
   <p>{{ "Довгий текст, який потрібно обрізати" | truncate : 18 }}</p> -->
 
-  <div class="todo-container">
+<!-- <div class="todo-container">
     <input
       [(ngModel)]="newTask"
       placeholder="Add new task..."
@@ -88,5 +88,49 @@
         <button (click)="removeTask(i)" class="remove-btn">Remove</button>
       </li>
     </ul>
+  </div>
+</div> -->
+<div>
+  <div class="container">
+    <form [formGroup]="complexForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" formControlName="name" />
+        <div *ngIf="name?.invalid && name?.touched" class="error">
+          This name is invalid
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" formControlName="email" />
+        <div *ngIf="email?.invalid && email?.touched" class="error">
+          This email is invalid
+        </div>
+      </div>
+
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" formControlName="age" />
+        <div *ngIf="age?.invalid && age?.touched" class="error">
+          This age is invalid
+        </div>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="text" formControlName="password" />
+        <div *ngIf="password?.invalid && password?.touched" class="error">
+          This password is invalid
+        </div>
+      </div>
+
+      <div>
+        <label for="consent">Consent:</label>
+        <input type="checkbox" formControlName="consent" />
+        I agree to the terms and conditions
+      </div>
+      <button type="submit" [disabled]="!complexForm.valid">Submit</button>
+    </form>
   </div>
 </div>
