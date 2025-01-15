@@ -1,70 +1,70 @@
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
 // import { Component, OnInit, inject } from '@angular/core';
-import { Component } from '@angular/core';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-  ValidationErrors,
-} from '@angular/forms';
+// import { Component } from '@angular/core';
+// import {
+//   AbstractControl,
+//   FormControl,
+//   FormGroup,
+//   FormsModule,
+//   ReactiveFormsModule,
+//   Validators,
+//   ValidationErrors,
+// } from '@angular/forms';
 // import { TodoService } from '../../services/todo.service';
 // import { HighlightDirective } from '../../directive/highlight.directive';
 // import { TruncatePipe } from '../../pipes/truncate.pipe';
 
-@Component({
-  selector: 'app-test',
-  standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
-  templateUrl: './test.component.html',
-  styleUrl: './_test.component.scss',
-})
-export class TestComponent {
-  ageValidator(control: AbstractControl): ValidationErrors | null {
-    const value = control.value;
-    const isValidAge = value >= 18 && value <= 99;
-    return isValidAge ? null : { ageInvalid: 'Age must be between 18 and 99' };
-  }
+// @Component({
+//   selector: 'app-test',
+//   standalone: true,
+//   imports: [CommonModule, FormsModule, ReactiveFormsModule],
+//   templateUrl: './test.component.html',
+//   styleUrl: './_test.component.scss',
+// })
+// export class TestComponent {
+//   ageValidator(control: AbstractControl): ValidationErrors | null {
+//     const value = control.value;
+//     const isValidAge = value >= 18 && value <= 99;
+//     return isValidAge ? null : { ageInvalid: 'Age must be between 18 and 99' };
+//   }
 
-  complexForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    age: new FormControl(null, [Validators.required, this.ageValidator]),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(6),
-    ]),
-    consent: new FormControl(false, [Validators.requiredTrue]),
-  });
+//   complexForm = new FormGroup({
+//     name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+//     email: new FormControl('', [Validators.required, Validators.email]),
+//     age: new FormControl(null, [Validators.required, this.ageValidator]),
+//     password: new FormControl('', [
+//       Validators.required,
+//       Validators.minLength(6),
+//     ]),
+//     consent: new FormControl(false, [Validators.requiredTrue]),
+//   });
 
-  onSubmit() {
-    console.log('Form value', this.complexForm.value);
-    console.log('Form status - is valid:', this.complexForm.valid);
-    console.log('Form controls:', this.complexForm.controls);
-  }
+//   onSubmit() {
+//     console.log('Form value', this.complexForm.value);
+//     console.log('Form status - is valid:', this.complexForm.valid);
+//     console.log('Form controls:', this.complexForm.controls);
+//   }
 
-  get name() {
-    return this.complexForm.get('name');
-  }
+//   get name() {
+//     return this.complexForm.get('name');
+//   }
 
-  get email() {
-    return this.complexForm.get('email');
-  }
+//   get email() {
+//     return this.complexForm.get('email');
+//   }
 
-  get age() {
-    return this.complexForm.get('age');
-  }
+//   get age() {
+//     return this.complexForm.get('age');
+//   }
 
-  get password() {
-    return this.complexForm.get('password');
-  }
+//   get password() {
+//     return this.complexForm.get('password');
+//   }
 
-  get consent() {
-    return this.complexForm.get('consent');
-  }
-}
+//   get consent() {
+//     return this.complexForm.get('consent');
+//   }
+// }
 // newTask: string = '';
 // tasks: string[] = [];
 
