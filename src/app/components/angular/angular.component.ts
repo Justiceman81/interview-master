@@ -126,12 +126,10 @@ export class AngularComponent implements OnInit {
     this.combined.subscribe({
       next: ([response1, response2, response3]) => {
         console.log('Result forkJoin', response1, response2, response3);
-    },
-      complete: () => console.log('All responses received!')
-    
-  });
-  
-
+      },
+      complete: () => console.log('All responses received!'),
+    });
+  }
   // ngOnInit(): void {
   //   this.observableFifth.subscribe({
   //     next: (value) => console.log(value),
